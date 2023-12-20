@@ -1,13 +1,13 @@
 package com.example.demo.entity;
 
-import java.util.List;
+/*import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;*/
 
-import com.example.demo.shared.BaseEntity;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,13 +18,22 @@ import lombok.Setter;
 @Getter 
 @Setter 
 @NoArgsConstructor
-public class Categoria extends BaseEntity{
+
+/*@JsonIdentityInfo(
+    generator = ObjectIdGenerators.PropertyGenerator.class,
+    property = "id"
+)*/
+public class Categoria {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_categoria;
     private String nombre;
     private String descripcion;
     private Boolean condicion;
 
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "categoria")
-
-    List<Articulo> uno;
+    /*@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "categoria")
+    /*@JsonManagedReference*/
+    /*private List<Articulo> articulos;*/
 }

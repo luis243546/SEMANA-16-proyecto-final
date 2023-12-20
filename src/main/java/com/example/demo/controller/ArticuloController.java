@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+/*import org.springframework.web.bind.annotation.ResponseStatus;*/
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.Articulo;
 import com.example.demo.service.ArticuloService;
@@ -19,7 +20,8 @@ public class ArticuloController {
 	@Autowired
     ArticuloService articuloService;
 
-    @GetMapping("/lista")
+	/*@ResponseStatus*/
+    @GetMapping("/listarticulo")
 	public List<Articulo> verTodo() {
 		return articuloService.listar();
 	}
@@ -29,7 +31,7 @@ public class ArticuloController {
 		return articuloService.verUno(id);
 	}
 
-	@PostMapping("/registrar")
+	@PostMapping("/registrarArticulo")
 	public Articulo registar(@RequestBody Articulo personal){
 		return articuloService.registrar(personal);
 	}

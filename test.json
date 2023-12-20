@@ -1,0 +1,18 @@
+{
+    "nombre": "test",
+    "descripcion": "test",
+    "condicion": true,
+    "articulos": [
+        {
+            "codigo": "test",
+            "nombre": "test",
+            "stock": 2,
+            "descripcion": "test",
+            "imagen": "test",
+            "estado": "nuevo",
+            "categoria": "categoria"
+        }
+    ]
+}
+
+
